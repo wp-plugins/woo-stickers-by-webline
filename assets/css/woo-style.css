@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+.woosticker{position:absolute; background-image:url(../images/wli_label_sprite.png); color:transparent;}
+.new_ribbon, .onsale_ribbon, .soldout_ribbon{left:0px; top:0px; width: 56px; height: 54px; z-index:99;} 
+.new_ribbon {background-position:-1px -1px;}
+.onsale_ribbon {background-position:-1px -63px; z-index:99;}
+.soldout_ribbon {background-position:-1px -123px;}
+.new_round, .onsale_round, .soldout_round{ left: 10px; top: 10px; width: 43px; height: 43px; z-index:99;}
+.new_round {background-position:-2px -186px;}
+.onsale_round {background-position:-2px -234px;}
+.soldout_round {background-position:-2px -282px;}
