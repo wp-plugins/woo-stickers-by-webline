@@ -74,7 +74,8 @@ class wooStickerMenu {
 		
 		$this->new_product_settings = array_merge ( array (
 				'enable_new_product_sticker' => 'no',
-				'enable_new_product_style' => 'ribbon' 
+				'enable_new_product_style' => 'ribbon',
+				'new_product_sticker_days' => '10' 
 		), $this->new_product_settings );
 		
 		$this->sale_product_settings = array_merge ( array (
@@ -91,6 +92,7 @@ class wooStickerMenu {
 		define ( "ENABLE_STICKER_LISTING", $this->general_settings ['enable_sticker_list'] );
 		define ( "ENABLE_STICKER_DETAIL", $this->general_settings ['enable_sticker_detail'] );
 		define ( "ENABLE_NEW_PRODUCT", $this->new_product_settings ['enable_new_product_sticker'] );
+		define ( "NEW_PRODUCT_DAYS", $this->new_product_settings ['new_product_sticker_days'] );
 		define ( "ENABLE_SALE_PRODUCT", $this->sale_product_settings ['enable_sale_product_sticker'] );
 		define ( "ENABLE_SALE_PRODUCT_STYLE", $this->sale_product_settings ['enable_sale_product_style'] );
 		define ( "ENABLE_NEW_PRODUCT_STYLE", $this->new_product_settings ['enable_new_product_style'] );
@@ -146,6 +148,7 @@ class wooStickerMenu {
 		$this->plugin_settings_tabs [$this->new_product_settings_key] = 'Sticker Configurations for New Product';
 		
 		register_setting ( $this->new_product_settings_key, $this->new_product_settings_key );
+		
 		add_settings_section ( 'section_new_product', 'New Product Sticker Configurations', array (
 				&$this,
 				'section_new_product_desc' 
@@ -155,6 +158,11 @@ class wooStickerMenu {
 				&$this,
 				'enable_new_product_sticker' 
 		), $this->new_product_settings_key, 'section_new_product' );
+		
+		add_settings_field ( 'new_product_sticker_days', 'Number of Days for New Product:', array (
+		&$this,
+		'new_product_sticker_days'
+			), $this->new_product_settings_key, 'section_new_product' );
 		
 		add_settings_field ( 'enable_new_product_style', 'Enable Sticker On New Product:', array (
 				&$this,
@@ -313,6 +321,24 @@ class wooStickerMenu {
 <p class="description">Control sticker display for products which are marked as NEW in wooCommerce.</p>
 <?php
 	}
+	
+	/**
+	 * New Product Settings :: Days to New Products
+	 *
+	 * @return void
+	 * @var No arguments passed
+	 * @author Weblineindia
+	 */
+	function new_product_sticker_days() {
+		
+		?>
+		<input type="text" id="new_product_sticker_days" name="<?php echo $this->new_product_settings_key;?>[new_product_sticker_days]" value="<?php echo $this->new_product_settings['new_product_sticker_days']?>" />
+
+<p class="description">Control sticker display for products which are marked as NEW in wooCommerce.</p>
+<?php
+	}
+	
+	
 	/**
 	 * New Product Settings :: Display style On New Product
 	 *

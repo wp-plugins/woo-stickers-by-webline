@@ -3,7 +3,7 @@ Contributors: weblineindia
 Tags: woocommerce stickers, woocommerce products stickers, product stickers 
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 
 Product sticker plugin to improve customer experience while shopping by providing stickers for New, On Sale and Soldout Products.
@@ -15,6 +15,7 @@ Product sticker plugin to improve customer experience while shopping by providin
 = Key Features =
 
 - Sticker for New, On Sale, Soldout Products
+- Admin can define number of days to define product as new.
 - Admin can configure different style of stickers
 - Admin can enable/disable this sticker feature
 - Admin can configure stickers for Product List as well for Product Detail page
@@ -43,6 +44,12 @@ Product sticker plugin to improve customer experience while shopping by providin
 12. Sold Configuration of WooStickers Plugin.
 
 == Changelog ==
+
+= 1.0.2 =
+
+Release Date: November 29, 2014
+
+* Enhancement: Added to field to consider product as new.
 
 = 1.0.1 =
 Release Date: November 26, 2014

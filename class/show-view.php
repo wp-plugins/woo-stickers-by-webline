@@ -75,7 +75,9 @@ class wooStickerView {
 	function wli_woocommerce_show_product_loop_new_badge() {
 		$postdate = get_the_time ( 'Y-m-d' );
 		$postdatestamp = strtotime ( $postdate );
-		$newness = 10;
+		
+		$newness = NEW_PRODUCT_DAYS;
+		
 		$class = (ENABLE_NEW_PRODUCT_STYLE == "ribbon") ? "new_ribbon" : "new_round";
 		if ((time () - (60 * 60 * 24 * $newness)) < $postdatestamp && ENABLE_NEW_PRODUCT == "yes") {
 			// // If the product was published within the newness time frame display the new badge /////
