@@ -49,7 +49,7 @@ Product sticker plugin to improve customer experience while shopping by providin
 
 Release Date: November 29, 2014
 
-* Enhancement: Added to field to consider product as new.
+* Enhancement: Added field to consider product as new.
 
 = 1.0.1 =
 Release Date: November 26, 2014
