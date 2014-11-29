@@ -25,7 +25,6 @@ Product sticker plugin to improve customer experience while shopping by providin
 
 1. Upload 'woo-stickers-by-webline' to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Define how 'new' products must be (in days) to receive the 'new' badge on the catalog tab of the WooCommerce settings screen.
 3. Done!
 
 == Screenshots ==
