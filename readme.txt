@@ -19,6 +19,7 @@ Product sticker plugin to improve customer experience while shopping by providin
 - Admin can configure different style of stickers
 - Admin can enable/disable this sticker feature
 - Admin can configure stickers for Product List as well for Product Detail page
+- Upload Custom Sticker functionality
 
 
 == Installation ==
@@ -66,6 +67,7 @@ We have a standard image dimension is 54 X 54 for custom sticker image. if dimen
 = 1.0.3 =
 
 Release Date: March 04, 2015
+
 * Enhancement: Setting link on Plugins page.
 * Enhancement: Added field for Product Sticker Position and Custom sticker upload for new, sale and soldout product.
 * Enhancement: Shorten tab names.
