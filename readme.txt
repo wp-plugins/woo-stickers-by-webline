@@ -1,6 +1,6 @@
 === WOO Stickers by Webline ===
 Contributors: weblineindia
-Tags: woocommerce stickers, woocommerce products stickers, product stickers 
+Tags: woocommerce stickers, woocommerce products stickers, product stickers, product badge, woocommerce product badge, custom product badge 
 Requires at least: 3.5
 Tested up to: 4.1.1
 Stable tag: 1.0.4
