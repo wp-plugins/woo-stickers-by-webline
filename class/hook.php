@@ -13,6 +13,9 @@ class wooStickerHooks {
         if(version_compare(get_option(WS_OPTION_NAME), '1.0.3') == '-1') {
         	$this->upgradeTo103();
         }
+        if(version_compare(get_option(WS_OPTION_NAME), '1.0.4') == '-1') {
+        	$this->upgradeTo104();
+        }
     }
     
     private function update_version($version = '') {
@@ -77,6 +80,11 @@ class wooStickerHooks {
     	 
     }
     
+    public function upgradeTo104() {
+    	     	
+    	$this->update_version('1.0.4');
+    	 
+    }
 }
 
 new wooStickerHooks();

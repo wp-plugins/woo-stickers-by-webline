@@ -23,13 +23,13 @@ class wooStickerView {
 							'wli_woocommerce_show_product_loop_new_badge' 
 					), 30 );
 				}
-			}
+			}		
 			if (ENABLE_SALE_PRODUCT == "yes") {
 				if (ENABLE_STICKER_LISTING == "yes") {
 					add_filter ( 'woocommerce_sale_flash', array (
 							$this,
 							'wli_woocommerce_show_product_loop_sale_badge' 
-					), 11, 3 );
+					), 11, 3 );										
 				} else {
 					add_filter ( 'woocommerce_sale_flash', array (
 							$this,
@@ -56,6 +56,51 @@ class wooStickerView {
 						$this,
 						'wli_woocommerce_show_product_loop_sale_badge_remove' 
 				), 11, 3 );
+			}
+			/**
+			 * Filter added for resolving bug of sold product
+			 * not display.
+			 * v 1.0.4 jenilk
+			 * */
+			if(ENABLE_SOLD_PRODUCT == "yes")
+			{				
+				if (ENABLE_STICKER_LISTING == "yes") {											
+					add_filter ( 'woocommerce_before_shop_loop_item_title', array (
+					 $this,
+					 'wli_woocommerce_show_product_loop_soldout_badge'
+					), 11, 3 );
+				} else {
+					add_filter ( 'woocommerce_sale_flash', array (
+					$this,
+					'wli_woocommerce_show_product_loop_sale_badge_remove'
+						), 11, 3 );
+				}
+				if (ENABLE_STICKER_DETAIL == "yes") {
+					remove_action ( 'woocommerce_before_single_product_summary', array (
+					$this,
+					'wli_woocommerce_show_product_loop_sale_badge'
+						), 30 );
+						add_filter ( 'woocommerce_before_single_product_summary', array (
+						$this,
+						'wli_woocommerce_show_product_loop_soldout_badge'
+							), 11, 3 );
+				} else {
+					add_filter ( 'woocommerce_before_single_product_summary', array (
+					$this,
+					'wli_woocommerce_show_product_loop_sale_badge_remove'
+						), 11, 3 );
+					remove_action ( 'woocommerce_before_shop_loop_item_title', array (
+					$this,
+					'wli_woocommerce_show_product_loop_soldout_badge'
+						), 30 );						
+				}
+				
+			}
+			else {
+				add_filter ( 'woocommerce_sale_flash', array (
+				$this,
+				'wli_woocommerce_show_product_loop_sale_badge_remove'
+					), 11, 3 );												
 			}
 		} 
 	}
@@ -111,6 +156,29 @@ class wooStickerView {
 				return '<span class="' . $classSale . $classSalePosition . '" style="background-image:url('.SALE_PRODUCT_CUSTOM_STICKER.'); color:transparent;"> Sale </span>';
 			else
 				return '<span class="' . $classSale . $classSalePosition . '"> Sale </span>';
+		}
+	}
+	/**
+	 * Call back function for show sold product badge.
+	 *
+	 * @return void
+	 * @var No arguments passed
+	 * @author Weblineindia
+	 */
+	function wli_woocommerce_show_product_loop_soldout_badge()
+	{
+		global $product;
+		
+		$classSoldPosition=((SOLD_PRODUCT_POSITION=='left') ? ((is_product())? " pos_left_detail " : " pos_left " ) : ((is_product())? " pos_right_detail " : " pos_right "));
+		$classSold=((SOLD_PRODUCT_CUSTOM_STICKER=='')?((ENABLE_SOLD_PRODUCT_STYLE == "ribbon") ? ((SOLD_PRODUCT_POSITION=='left')?" woosticker soldout_ribbon_left ":" woosticker soldout_ribbon_right ") : ((SOLD_PRODUCT_POSITION=='left')?" woosticker soldout_round_left ":" woosticker soldout_round_right ")):"custom_sticker_image");
+		if (! $product->is_in_stock ()) {
+			if(ENABLE_SOLD_PRODUCT=="yes")
+			{
+				if($classSold=="custom_sticker_image")
+					echo '<span class="' . $classSold . $classSoldPosition . '" style="background-image:url('.SOLD_PRODUCT_CUSTOM_STICKER.'); color:transparent;"> Sold Out </span>';
+				else
+					echo '<span class="'.$classSold . $classSoldPosition .'">Sold Out</span>';
+			}
 		}
 	}
 	/**

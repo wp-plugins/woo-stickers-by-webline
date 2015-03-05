@@ -3,7 +3,7 @@ Contributors: weblineindia
 Tags: woocommerce stickers, woocommerce products stickers, product stickers 
 Requires at least: 3.5
 Tested up to: 4.1.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 
 Product sticker plugin to improve customer experience while shopping by providing stickers for New, On Sale and Soldout Products.
@@ -63,6 +63,12 @@ We have a standard image dimension is 54 X 54 for custom sticker image. if dimen
 
 
 == Changelog ==
+
+= 1.0.4 =
+
+Release Date: March 05, 2015
+
+* Fix: Soldout product sticker not display on category page or listing while product is on sale and out of stock. 
 
 = 1.0.3 =
 

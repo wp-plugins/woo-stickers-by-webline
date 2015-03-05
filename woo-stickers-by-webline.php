@@ -4,7 +4,7 @@
  * URI: http://www.weblineindia.com
  * Description: Product sticker extension to improve customer experience while shopping by providing stickers for New products, On Sale products, Soldout Products which is easily configure from admin panel without any extra developer efforts.
  * Author: Weblineindia
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author URI: http://www.weblineindia.com
  * Network: false
  * 
@@ -14,7 +14,7 @@
  * Check if WooCommerce is active.
  */
 if (in_array ( 'woocommerce/woocommerce.php', apply_filters ( 'active_plugins', get_option ( 'active_plugins' ) ) )) {
-	define ( 'WS_VERSION', '1.0.3' );
+	define ( 'WS_VERSION', '1.0.4' );
 	define ( 'WS_DEBUG', TRUE );
 	define ( 'WS_PATH', plugin_dir_path ( __FILE__ ) );
 	define ( 'WS_URL', plugins_url ( '', __FILE__ ) );
