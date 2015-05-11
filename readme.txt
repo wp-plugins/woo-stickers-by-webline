@@ -2,7 +2,7 @@
 Contributors: weblineindia
 Tags: woocommerce stickers, woocommerce products stickers, product stickers, product badge, woocommerce product badge, custom product badge 
 Requires at least: 3.5
-Tested up to: 4.1.1
+Tested up to: 4.2.2
 Stable tag: 1.0.4
 License: GPLv2 or later
 
